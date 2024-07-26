@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./style.css";
 import { VscEdit } from "react-icons/vsc";
 import { VscTrash } from "react-icons/vsc";
 
 export default function Setores() {
+  const [setores, setSetores] = useState([]);
+
+  useEffect(() => {
+    const fetchSetores = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/get-setores");
+        setSetores(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchSetores();
+  }, []);
+
   return (
     <>
       <div className="container2">
@@ -23,8 +39,9 @@ export default function Setores() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Facebook</td>
+        {setores.map((setor, index) => (
+          <tr key={index}>
+            <td>{setor.descricao}</td>
             <td alignCenter width="5%">
               <VscEdit />
             </td>
@@ -32,6 +49,7 @@ export default function Setores() {
               <VscTrash  />
             </td>
           </tr>
+          ))}
         </tbody>
       </table>
     </>
