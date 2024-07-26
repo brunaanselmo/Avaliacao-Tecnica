@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { VscEdit, VscTrash } from "react-icons/vsc";
 import "./style.css";
+import Filter from "../../components/filter/filter";
 
 export default function Empresas() {
   const [empresas, setEmpresas] = useState([]);
@@ -85,6 +86,8 @@ export default function Empresas() {
         setEmpresas(newArray);
       });
   };
+
+  <Filter/>
 
   return (
     <>
