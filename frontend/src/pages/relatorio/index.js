@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./style.css";
+import Filter from "../../components/filter/filter";
 
 export default function Setores() {
   const [dados, setDados] = useState([]);
@@ -22,6 +23,7 @@ export default function Setores() {
 
   return (
     <>
+      <Filter/>
       <div className="container3">
         <h1>Relatório</h1>
       </div>
