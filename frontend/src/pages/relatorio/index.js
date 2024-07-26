@@ -8,7 +8,9 @@ export default function Setores() {
   useEffect(() => {
     const fetchDados = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/get-relatorio");
+        const response = await axios.get(
+          "http://localhost:8080/api/get-relatorio"
+        );
         setDados(response.data);
       } catch (error) {
         console.log(error);

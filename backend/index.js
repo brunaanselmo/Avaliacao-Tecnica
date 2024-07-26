@@ -13,7 +13,6 @@ app.use("/api", empresasRoutes);
 app.use("/api", setoresRoutes);
 app.use("/api", relatoriosRoutes);
 
-
 app.listen(8080, () => {
-    console.log("Servidor rodando na porta 8080");
+  console.log("Servidor rodando na porta 8080");
 });
