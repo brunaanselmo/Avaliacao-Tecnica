@@ -1,0 +1,17 @@
+:root { 
+    --color-text-base: #32264D;
+  }
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Raleway', sans-serif;
+    
+  }
+  
+  html, body{
+    height: 100vh; 
+    width: 100vw;
+    background-color: rgb(236, 209, 248);
+  }
